@@ -1,22 +1,4 @@
-// const verifyTicket = (ticket) => {
-//     let cnt = 0;
-//     let flag = true;
-//     for (let i = 0; i < 9; i++) {
-//         cnt = ticket[0][i] + ticket[1][i] + ticket[2][i];
-//         if (cnt === 0) flag = false;
-//     }
-//     for (let i = 0; i < 3; i++) {
-//         cnt = 0;
-//         for (let j = 0; j < 9; j++) {
-//             if (ticket[i][j] === 0) {
-//                 cnt++;
-//             }
-//         }
-//         if (cnt !== 4) flag = false;
-//     }
-//     return flag;
-// };
-
+/* eslint-disable no-loop-func */
 const sortTicketNum = (ticket) => {
     let col = 0;
     let arr = [];

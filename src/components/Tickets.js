@@ -49,7 +49,7 @@ const Tickets = () => {
                 tickets: [...Array(Math.ceil(count / 6))].reduce((acc) => [...acc, ...createTickets()], []),
             });
         }
-    }, [loading]);
+    }, [count, loading, setTambola]);
 
     return (
         <div className='tambola-tickets'>
