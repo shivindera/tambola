@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import { TambolaProvider } from './contexts/TambolaContext';
+import Tambola from './components/Tambola';
+import Tickets from './components/Tickets';
+
+import './App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className='main'>
+            <TambolaProvider>
+                <Router>
+                    <nav className='tambola-nav'>
+                        <Link to='/'>Board</Link>
+                        <Link to='/tickets'>Tickets</Link>
+                    </nav>
+
+                    <Switch>
+                        <Route path='/tickets'>
+                            <Tickets />
+                        </Route>
+                        <Route path='/'>
+                            <Tambola />
+                        </Route>
+                    </Switch>
+                </Router>
+            </TambolaProvider>
+        </div>
+    );
 }
 
 export default App;
